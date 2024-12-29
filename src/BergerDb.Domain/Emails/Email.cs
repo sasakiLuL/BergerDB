@@ -7,12 +7,22 @@ namespace BergerDb.Domain.Emails;
 public class Email : Entity
 {
     public Email(
-        EntityId id, 
-        EmailType emailType, 
-        DateTime sentOnUtc) : base(id)
+        EntityId id,
+        EmailType emailType,
+        DateTime sentOnUtc,
+        string subject,
+        EmailAddress from,
+        EmailAddress to,
+        string bodyText,
+        PdfMetadata pdfMetadata) : base(id)
     {
         EmailType = emailType;
         SentOnUtc = sentOnUtc;
+        Subject = subject;
+        From = from;
+        To = to;
+        BodyText = bodyText;
+        PdfMetadata = pdfMetadata;
     }
 
     public EmailType EmailType { get; set; }
